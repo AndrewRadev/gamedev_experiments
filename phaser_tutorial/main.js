@@ -87,6 +87,11 @@ function update() {
   if (cursors.up.isDown && player.body.touching.down) {
     player.body.velocity.y = -350;
   }
+
+  if (cursors.down.isDown && !player.body.touching.down) {
+    // body slam!
+    player.body.velocity.y = 1000;
+  }
 }
 
 function collectStar(player, star) {
